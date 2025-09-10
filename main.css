@@ -6,15 +6,195 @@ html,
 body {
   max-width: 100% !important;
   overflow-x: hidden !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: #000000;
   margin: 0;
+}
+
+/* Estilos modernos para tipografía agresiva */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #49fa26;
+  text-shadow: 0 2px 8px rgba(73, 250, 38, 0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efectos de texto moderno y agresivo */
+.aggressive-text {
+  font-family: "Chakra Petch", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(73, 250, 38, 0.4);
+  animation: modernGlow 3s ease-in-out infinite alternate;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes modernGlow {
+  0% {
+    text-shadow: 0 2px 8px rgba(73, 250, 38, 0.3),
+      0 0 16px rgba(73, 250, 38, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 4px 16px rgba(73, 250, 38, 0.5),
+      0 0 24px rgba(73, 250, 38, 0.3);
+    transform: scale(1.02);
+  }
+  100% {
+    text-shadow: 0 2px 8px rgba(73, 250, 38, 0.3),
+      0 0 16px rgba(73, 250, 38, 0.2);
+    transform: scale(1);
+  }
+}
+
+/* Estilos modernos adicionales */
+.modern-title {
+  font-family: "Space Grotesk", "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #49fa26 0%, #3ddb1f 50%, #49fa26 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.modern-subtitle {
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c0c0c0;
+  opacity: 0.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efectos de hover modernos */
+.modern-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(73, 250, 38, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.modern-hover:hover::before {
+  left: 100%;
+}
+
+.modern-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(73, 250, 38, 0.2);
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  margin: 2rem 0;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.hero-section p {
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.hero-cta .navlist-especial {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(73, 250, 38, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 50vh;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .hero-cta .navlist-especial {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
 }
 /*
   color de fondo:                     --- #000000
@@ -59,12 +239,18 @@ body {
   display: flex;
   color: #49fa26;
   float: right;
-  font-weight: 500;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
   font-size: large;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   border: solid 2px #000000;
   border-top: none;
   border-bottom: none;
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .navlist:hover {
@@ -81,14 +267,19 @@ body {
   display: inline;
   float: right;
   color: #000;
-  background-color: #49fa26;
-  border-color: #49fa26;
-  border: o.3em;
-  border-style: solid;
-  border-radius: 0.6em;
+  background: linear-gradient(135deg, #49fa26 0%, #3ddb1f 100%);
+  border: none;
+  border-radius: 8px;
+  font-family: "Outfit", "Space Grotesk", sans-serif;
   font-size: large;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(73, 250, 38, 0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .navlist-especial:hover {
@@ -105,6 +296,11 @@ body {
   font-size: 30px;
   cursor: pointer;
   color: #49fa26;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .close-menu {
@@ -115,7 +311,9 @@ body {
   font-size: 35px;
   cursor: pointer;
   color: #49fa26;
-  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 40px;
@@ -125,6 +323,8 @@ body {
   border-radius: 50%;
   background: rgba(73, 250, 38, 0.1);
   border: 2px solid transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .close-menu:hover {
@@ -209,12 +409,18 @@ body {
     margin: 8px 0;
     width: 100%;
     list-style: none;
+    font-family: "Space Grotesk", "Inter", sans-serif;
     font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
     color: #49fa26;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 8px 0;
     position: relative;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .nav-item::before {
@@ -242,9 +448,15 @@ body {
     width: auto;
     text-align: center;
     padding: 0px;
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
     color: #49fa26;
     text-decoration: none;
     transition: color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .nav-item a.navlist:hover {
@@ -257,15 +469,20 @@ body {
     text-align: center;
     margin: 0;
     padding: 12px 24px;
-    background: linear-gradient(45deg, #49fa26, #3ddb1f);
+    background: linear-gradient(135deg, #49fa26 0%, #3ddb1f 100%);
     color: #000;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(73, 250, 38, 0.3);
+    font-family: "Outfit", "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(73, 250, 38, 0.3);
     position: relative;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .navlist-especial::before {
@@ -405,12 +622,16 @@ body {
   padding: 16px;
   margin-top: -22px;
   color: white;
-  font-weight: bold;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
   font-size: 24px;
+  letter-spacing: 0.5px;
   user-select: none;
   transition: 0.6s ease;
   text-decoration: none;
   z-index: 10;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .prev {
@@ -487,11 +708,16 @@ footer {
 
 .footer-link {
   color: #c0c0c0;
-  font-weight: 400;
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-weight: 500;
   font-size: medium;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
   text-decoration: none;
   margin-bottom: 10px;
   transition: color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .footer-link:hover {
@@ -500,10 +726,15 @@ footer {
 
 .derechos {
   color: #c0c0c0;
+  font-family: "Inter", "Space Grotesk", sans-serif;
   font-size: medium;
   font-weight: 400;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
   text-align: center;
   margin-top: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .social-icons {
