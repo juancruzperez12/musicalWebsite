@@ -244,9 +244,7 @@ h6 {
   font-size: large;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  border: solid 2px #000000;
-  border-top: none;
-  border-bottom: none;
+  border: none !important;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-font-smoothing: antialiased;
@@ -255,9 +253,20 @@ h6 {
 
 .navlist:hover {
   color: #c0c0c0;
-  border: solid 2px #000000;
-  border-top: none;
-  border-bottom: none;
+  border: none !important;
+}
+
+/* Asegura que los enlaces del nav no muestren borde/outline */
+.nav-item a.navlist {
+  border: none !important;
+  outline: none;
+  box-shadow: none;
+}
+.nav-item a.navlist:focus,
+.nav-item a.navlist:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none !important;
 }
 
 .navlist-especial {
@@ -360,7 +369,7 @@ h6 {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(100%);
     padding: 80px 20px 15px 20px;
-    border-left: 3px solid #49fa26;
+    border-left: none;
     box-shadow: -8px 0 25px rgba(73, 250, 38, 0.15),
       -5px 0 15px rgba(0, 0, 0, 0.8);
     z-index: 999;
