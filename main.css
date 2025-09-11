@@ -691,7 +691,23 @@ h6 {
 /* inicia css footer */
 footer {
   width: 100%;
-  padding: 10em 5em 1em 5em;
+  padding: 4em 2em 1.5em 2em;
+  background-color: #000000;
+}
+
+footer::before {
+  content: none;
+}
+
+@keyframes footerGlow {
+  0% {
+    opacity: 0.3;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .contenedor-footer {
@@ -704,96 +720,154 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
+  gap: 8px;
 }
 
 .footer-link {
   color: #c0c0c0;
-  font-family: "Inter", "Space Grotesk", sans-serif;
-  font-weight: 500;
-  font-size: medium;
-  letter-spacing: 0.3px;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   text-decoration: none;
   margin-bottom: 10px;
-  transition: color 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+.footer-link::before {
+  content: none;
 }
 
 .footer-link:hover {
-  color: #505050;
+  color: #49fa26;
+}
+
+.footer-link:hover::before {
+  width: 0;
 }
 
 .derechos {
   color: #c0c0c0;
   font-family: "Inter", "Space Grotesk", sans-serif;
-  font-size: medium;
-  font-weight: 400;
-  letter-spacing: 0.3px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.derechos a {
+  color: #49fa26;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.derechos a::after {
+  content: none;
+}
+
+.derechos a:hover {
+  color: #49fa26;
+}
+
+.derechos a:hover::after {
+  width: 0;
 }
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   margin-right: 50px;
-}
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1);
-}
-.social-icons a:hover img {
-  transform: scale(1.1);
-  filter: brightness(0) invert(0.8);
+  position: relative;
 }
 
+.social-icons a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(73, 250, 38, 0.1);
+  border: 2px solid rgba(73, 250, 38, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(73, 250, 38, 0.2),
+    rgba(61, 219, 31, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover::before {
+  opacity: 1;
+}
+
+.social-icons img,
 .social-icons object {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   filter: brightness(0) invert(1);
+  position: relative;
+  z-index: 2;
 }
 
+.social-icons a:hover {
+  transform: translateY(-3px) scale(1.1);
+  border-color: #49fa26;
+  box-shadow: 0 8px 25px rgba(73, 250, 38, 0.4);
+}
+
+.social-icons a:hover img,
 .social-icons a:hover object {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(73, 250, 38, 0.8));
   transform: scale(1.1);
-  filter: brightness(0) invert(0.8);
 }
 
 @media (max-width: 767px) {
   footer {
-    padding: 10em 1.5em 0.5em 1.5em;
+    padding: 3em 1.5em 1.5em 1.5em;
   }
   .contenedor-footer {
-    display: inline;
-  }
-  .social-icons {
-    margin-right: 0px;
-    margin-top: 20px;
-    gap: 10px;
-    justify-content: center;
-  }
-  .social-icons img {
-    margin: 10px;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   .lista-footer {
-    margin: 10px 10px;
+    margin: 0;
+    text-align: center;
   }
-  .footer-link:hover {
-    color: #c0c0c0;
+  .social-icons {
+    margin: 0;
+    justify-content: center;
+  }
+  .social-icons img,
+  .social-icons object {
+    width: 20px;
+    height: 20px;
+  }
+  .footer-link {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
   }
   .derechos {
-    margin-top: 15px;
-  }
-  .derechos a {
-    color: #49fa26;
-    font-style: italic;
-    text-decoration: none;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
   }
 }
 /* cierra css footer */
