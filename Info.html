@@ -1,65 +1,194 @@
 <!DOCTYPE html>
 <html>
-<head>
-        <title>Music Festival - Info</title>
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">        
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo title music festival.png">  
-</head>
-<body>
-<div>
-        <nav>
-<ul class="menu">
-        <a href="festival.html"><img src="logo music festival clean.png"></a>
-        <a href="lineup.html"><li>Line Up</li></a>
-        <a href="Info.html"><li>Info</li></a>
-        <a href="sponsors.html"><li>Sponsors</li></a>
-    <ul class="tickets">
-    <a href="https://www.allaccess.com.ar"><li>Quiero mis tickets !</li></a>
-    </ul>
-        </nav>  
-</div>
-<div class="info">
-        <h1>Informacion</h1>
-        <div class="listainfo">
-                <div class="info1">
-                        <a href="#cuandodonde"><h3>¿Cuando y donde se realizará el Music Festival?</h3></a>
-                        <div id="cuandodonde">Podrás disfrutar del Music Festival el 21 de Septiembre del 2023. <br>
-                                El mismo se realizará en el Hipódromo de San Isidro, ubicado en Av. Bernabé Márquez 700, San Isidro, Provincia de Buenos Aires.</div>
-                </div>
-                <div class="info2">
-                        <a href="#edad"><h3>¿A partir de qué edad pueden ingresar menores al festival?</h3></a>
-                        <div id="edad">Podrán ingresar niños de hasta 16 años inclusive. <br>
+  <head>
+    <title>Music Festival - Info</title>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo title music festival.png" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">
+        <img
+          src="logo music festival clean.png"
+          class="logotipo"
+          alt="logotipo"
+        />
+      </a>
+      <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+      <ul class="top-nav">
+        <div class="close-menu" id="close-menu">×</div>
+        <li class="nav-item">
+          <a href="lineup.html" class="navlist modern-hover">LINE UP</a>
+        </li>
+        <li class="nav-item">
+          <a href="Info.html" class="navlist modern-hover">INFO</a>
+        </li>
+        <li class="nav-item">
+          <a href="sponsors.html" class="navlist modern-hover">SPONSORS</a>
+        </li>
 
-                                El deber de supervisión permanece en todo momento bajo responsabilidad de los padres o la persona acompañante.
-                        </div>
-                </div>
-                <div class="info3">
-                        <a href="#retirar"><h3>¿Cuándo puedo retirar mi/s pulsera/s?</h3></a>
-                        <div id="retirar">Próximamente anunciaremos las fechas y los <a href="https://www.allaccess.com.ar/puntos-de-venta">puntos </a> de canje habilitados.<br>
-                                 Los podrás consultar aquí 
+        <li class="nav-item">
+          <a
+            href="https://www.allaccess.com.ar"
+            class="navlist-especial modern-hover"
+            >¡COMPRAR TICKETS!</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- Hero Section Info -->
+    <section class="hero-section">
+      <h1 class="modern-title aggressive-text">INFORMACIÓN</h1>
+      <p class="modern-subtitle">TODO LO QUE NECESITÁS SABER</p>
+    </section>
 
-                        </div>
-                </div>
-                <div class="info4">
-                        <a href="#cantidad"><h3>¿Cuántas entradas puedo adquirir por compra?</h3></a>
-                        <div id="cantidad">Vas a poder adquirir hasta 4 entradas por compra.
-                        </div>
-                </div>
-                <div class="info5">
-                        <a href="#pulseras"><h3>¿Cómo autorizo a un tercero a retirar mis entradas?</h3></a>
-                        <div id="pulseras">El titular de la compra podrá autorizar a un tercero para que retire sus entradas con una<br> nota constatada
-                                 por un escribano o por la entidad bancaria emisora de la tarjeta con la cual fue realizada la compra,
-                                 en la cual figure el DNI de la persona que realiza el retiro.</div>
-                </div>
-
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h3>¿CUÁNDO Y DÓNDE SE REALIZARÁ EL MUSIC FESTIVAL?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Podrás disfrutar del Music Festival el 21 de Septiembre del
+              2024.<br />
+              El mismo se realizará en el Hipódromo de San Isidro, ubicado en
+              Av. Bernabé Márquez 700, San Isidro, Provincia de Buenos Aires.
+            </p>
+          </div>
         </div>
-</div>
 
-</body>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h3>¿A PARTIR DE QUÉ EDAD PUEDEN INGRESAR MENORES AL FESTIVAL?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Podrán ingresar niños de hasta 16 años inclusive.<br />
+              El deber de supervisión permanece en todo momento bajo
+              responsabilidad de los padres o la persona acompañante.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h3>¿CUÁNDO PUEDO RETIRAR MI/S PULSERA/S?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Próximamente anunciaremos las fechas y los
+              <a
+                href="https://www.allaccess.com.ar/puntos-de-venta"
+                class="faq-link"
+                >puntos de canje</a
+              >
+              habilitados.<br />
+              Los podrás consultar aquí.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h3>¿CUÁNTAS ENTRADAS PUEDO ADQUIRIR POR COMPRA?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Vas a poder adquirir hasta 4 entradas por compra.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <h3>¿CÓMO AUTORIZO A UN TERCERO A RETIRAR MIS ENTRADAS?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              El titular de la compra podrá autorizar a un tercero para que
+              retire sus entradas con una nota constatada por un escribano o por
+              la entidad bancaria emisora de la tarjeta con la cual fue
+              realizada la compra, en la cual figure el DNI de la persona que
+              realiza el retiro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="contenedor-footer">
+        <div class="lista-footer">
+          <a href="lineup.html" class="footer-link modern-hover">LINE UP</a>
+          <a href="Info.html" class="footer-link modern-hover">INFO</a>
+          <a href="sponsors.html" class="footer-link modern-hover">SPONSORS</a>
+          <a
+            href="https://www.allaccess.com.ar"
+            class="footer-link modern-hover"
+            >TICKETS</a
+          >
+          <a href="#" class="footer-link modern-hover">CONTACTO</a>
+          <a href="#" class="footer-link modern-hover">FAQ</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://web.instagram.com/" class="modern-hover">
+            <object
+              data="instagram.svg"
+              type="image/svg+xml"
+              alt="icon instagram"
+            ></object>
+          </a>
+          <a href="https://www.tiktok.com/" class="modern-hover">
+            <object
+              data="tiktok.svg"
+              type="image/svg+xml"
+              alt="icon tiktok"
+            ></object>
+          </a>
+          <a href="https://www.x.com/" class="modern-hover">
+            <object data="x.svg" type="image/svg+xml" alt="icon x"></object>
+          </a>
+        </div>
+      </div>
+
+      <div class="derechos">
+        TODOS LOS DERECHOS RESERVADOS A MUSIC FESTIVAL ©2024-2025
+      </div>
+      <div class="derechos">
+        DESARROLLADO POR
+        <a href="https://baeco.tech" class="modern-hover">baeco.tech</a>
+      </div>
+    </footer>
+
+    <script src="burger.js"></script>
+    <script>
+      function toggleFaq(button) {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+        const icon = button.querySelector(".faq-icon");
+
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+          icon.textContent = "+";
+          faqItem.classList.remove("active");
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          icon.textContent = "−";
+          faqItem.classList.add("active");
+        }
+      }
+    </script>
+  </body>
 </html>

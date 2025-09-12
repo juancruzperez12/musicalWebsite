@@ -186,26 +186,18 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  .hero-section {
-    min-height: 85vh;
-    padding: 1rem;
+  /* Solo para páginas que no sean index */
+  body:not(.index-page) .hero-section {
+    min-height: auto;
+    padding: 2rem 1rem;
     margin: 1rem 0;
-    /* En móviles usar versión vertical */
-    background-image: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.55) 0%,
-        rgba(0, 0, 0, 0.35) 100%
-      ),
-      url("fondo 1 vertical.png");
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background: none;
   }
 
   .hero-section h1 {
-    font-size: clamp(2.6rem, 11vw, 5.2rem);
-    letter-spacing: 2.5px;
+    font-size: clamp(2rem, 8vw, 4rem);
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
   }
 
   .hero-cta .navlist-especial {
@@ -233,6 +225,20 @@ h6 {
   left: 0;
   z-index: 1000;
   padding: 10px 20px;
+}
+
+/* Asegurar que el menú hamburguesa funcione en todas las páginas */
+@media (max-width: 768px) {
+  .navbar .hamburger-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .navbar .top-nav {
+    display: none !important;
+    visibility: hidden !important;
+  }
 }
 
 .logotipo {
@@ -361,17 +367,14 @@ h6 {
   box-shadow: 0 0 20px rgba(73, 250, 38, 0.3);
 }
 
-@media (max-width: 767px) {
-  .hamburger-menu {
-    display: block;
-  }
-
+@media (max-width: 768px) {
   .close-menu {
     display: flex;
   }
 
   .top-nav {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -394,7 +397,9 @@ h6 {
   }
 
   .top-nav.show {
-    display: flex;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     transform: translateX(0);
     padding: 80px 20px 15px 20px;
     margin-top: 0;
@@ -865,7 +870,7 @@ footer::before {
   transform: scale(1.1);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   footer {
     padding: 3em 1.5em 1.5em 1.5em;
   }
@@ -897,3 +902,254 @@ footer::before {
   }
 }
 /* cierra css footer */
+
+/* Estilos para FAQ Section */
+.faq-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(73, 250, 38, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item:hover {
+  border-color: rgba(73, 250, 38, 0.4);
+  box-shadow: 0 4px 20px rgba(73, 250, 38, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  color: #49fa26;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.faq-question:hover {
+  color: #ffffff;
+  background: rgba(73, 250, 38, 0.1);
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+  color: #49fa26;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.faq-answer p {
+  padding: 1.5rem 2rem;
+  margin: 0;
+  color: #c0c0c0;
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.faq-link {
+  color: #49fa26;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.faq-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 2rem 1rem;
+  }
+
+  .faq-question {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .faq-answer p {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para Line Up Section */
+.lineup-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lineup-container {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(73, 250, 38, 0.2);
+}
+
+.lineup-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(73, 250, 38, 0.2);
+}
+
+/* Reducir tamaño de imagen del lineup en móviles */
+@media (max-width: 768px) {
+  .lineup-image {
+    max-width: 80%;
+    max-height: 50vh;
+    object-fit: contain;
+  }
+}
+
+/* Estilos para Sponsors Section */
+.sponsors-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sponsor-category {
+  text-align: center;
+}
+
+/* Fondo claro solo para logos negros */
+.sponsor-category.presenta .sponsor-logo,
+.sponsor-category.medios-pago .sponsor-logo {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-title {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #49fa26;
+  margin-bottom: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sponsor-link {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(73, 250, 38, 0.2);
+}
+
+.sponsor-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: rgba(73, 250, 38, 0.5);
+  box-shadow: 0 8px 25px rgba(73, 250, 38, 0.3);
+  background: rgba(73, 250, 38, 0.1);
+}
+
+.sponsor-logo {
+  max-width: 150px;
+  height: auto;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.sponsor-link:hover .sponsor-logo {
+  filter: brightness(1.1);
+}
+
+.main-sponsor {
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .lineup-section,
+  .sponsors-section {
+    padding: 2rem 1rem;
+  }
+
+  .sponsor-logos {
+    gap: 1rem;
+  }
+
+  .sponsor-logo {
+    max-width: 120px;
+  }
+
+  .main-sponsor {
+    max-width: 150px;
+  }
+
+  .sponsor-title {
+    font-size: 1.2rem;
+  }
+}

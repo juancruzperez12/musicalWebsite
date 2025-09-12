@@ -1,27 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-        <title>Music Festival - Line Up</title>
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">        
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo title music festival.png">  
-</head>
-<body>
-        <nav>
-<ul class="menu">
-        <a href="festival.html"><img src="logo music festival clean.png"></a>
-        <a href="lineup.html"><li>Line Up</li></a>
-        <a href="Info.html"><li>Info</li></a>
-        <a href="sponsors.html"><li>Sponsors</li></a>
-    <ul class="tickets">
-    <a href="https://www.allaccess.com.ar"><li>Quiero mis tickets !</li></a>
-    </ul>
-        </nav>  
-        <img src="line up proximamente.png" class="imagenrecital">
-</body>
+  <head>
+    <title>Music Festival - Line Up</title>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Chakra+Petch:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo title music festival.png" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">
+        <img
+          src="logo music festival clean.png"
+          class="logotipo"
+          alt="logotipo"
+        />
+      </a>
+      <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+      <ul class="top-nav">
+        <div class="close-menu" id="close-menu">×</div>
+        <li class="nav-item">
+          <a href="lineup.html" class="navlist modern-hover">LINE UP</a>
+        </li>
+        <li class="nav-item">
+          <a href="Info.html" class="navlist modern-hover">INFO</a>
+        </li>
+        <li class="nav-item">
+          <a href="sponsors.html" class="navlist modern-hover">SPONSORS</a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            href="https://www.allaccess.com.ar"
+            class="navlist-especial modern-hover"
+            >¡COMPRAR TICKETS!</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- Hero Section Line Up -->
+    <section class="hero-section">
+      <h1 class="modern-title aggressive-text">LINE UP</h1>
+    </section>
+
+    <section class="lineup-section">
+      <div class="lineup-container">
+        <img src="lineup-img.png" alt="Line Up" class="lineup-image" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="contenedor-footer">
+        <div class="lista-footer">
+          <a href="lineup.html" class="footer-link modern-hover">LINE UP</a>
+          <a href="Info.html" class="footer-link modern-hover">INFO</a>
+          <a href="sponsors.html" class="footer-link modern-hover">SPONSORS</a>
+          <a
+            href="https://www.allaccess.com.ar"
+            class="footer-link modern-hover"
+            >TICKETS</a
+          >
+          <a href="#" class="footer-link modern-hover">CONTACTO</a>
+          <a href="#" class="footer-link modern-hover">FAQ</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://web.instagram.com/" class="modern-hover">
+            <object
+              data="instagram.svg"
+              type="image/svg+xml"
+              alt="icon instagram"
+            ></object>
+          </a>
+          <a href="https://www.tiktok.com/" class="modern-hover">
+            <object
+              data="tiktok.svg"
+              type="image/svg+xml"
+              alt="icon tiktok"
+            ></object>
+          </a>
+          <a href="https://www.x.com/" class="modern-hover">
+            <object data="x.svg" type="image/svg+xml" alt="icon x"></object>
+          </a>
+        </div>
+      </div>
+
+      <div class="derechos">
+        TODOS LOS DERECHOS RESERVADOS A MUSIC FESTIVAL ©2024-2025
+      </div>
+      <div class="derechos">
+        DESARROLLADO POR
+        <a href="https://baeco.tech" class="modern-hover">baeco.tech</a>
+      </div>
+    </footer>
+
+    <script src="burger.js"></script>
+  </body>
 </html>
