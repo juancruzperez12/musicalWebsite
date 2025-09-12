@@ -186,8 +186,8 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  /* Solo para páginas que no sean index */
-  body:not(.index-page) .hero-section {
+  /* Aplicar a todas las páginas para consistencia responsive */
+  .hero-section {
     min-height: auto;
     padding: 2rem 1rem;
     margin: 1rem 0;
@@ -228,16 +228,19 @@ h6 {
 }
 
 /* Asegurar que el menú hamburguesa funcione en todas las páginas */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar .hamburger-menu {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative;
+    z-index: 1001;
   }
 
   .navbar .top-nav {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
 
@@ -333,6 +336,7 @@ h6 {
   letter-spacing: 0.5px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  z-index: 1001;
 }
 
 .close-menu {
@@ -367,7 +371,7 @@ h6 {
   box-shadow: 0 0 20px rgba(73, 250, 38, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .close-menu {
     display: flex;
   }
@@ -405,6 +409,7 @@ h6 {
     margin-top: 0;
     box-shadow: -12px 0 35px rgba(73, 250, 38, 0.25),
       -8px 0 25px rgba(0, 0, 0, 0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .top-nav ul {
