@@ -417,6 +417,7 @@ h6 {
     box-shadow: -12px 0 35px rgba(73, 250, 38, 0.25),
       -8px 0 25px rgba(0, 0, 0, 0.9);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom-left-radius: 15px;
   }
 
   .top-nav ul {
