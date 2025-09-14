@@ -1097,12 +1097,12 @@ footer::before {
 /* Aumentar tamaño de imagen del lineup en móviles */
 @media (max-width: 768px) {
   .lineup-container {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .lineup-image {
-    max-width: 95%;
-    max-height: 70vh;
+    max-width: 100%;
+    max-height: 80vh;
     object-fit: contain;
   }
 }
