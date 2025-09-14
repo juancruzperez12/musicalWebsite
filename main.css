@@ -1094,6 +1094,155 @@ footer::before {
   box-shadow: 0 8px 32px rgba(73, 250, 38, 0.2);
 }
 
+/* Estilos para el botón de compartir lineup */
+.share-lineup-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.share-lineup-btn {
+  background: linear-gradient(135deg, #49fa26 0%, #3ddb1f 100%);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-family: "Outfit", "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(73, 250, 38, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.share-lineup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(73, 250, 38, 0.4);
+  color: #505050;
+}
+
+.share-lineup-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(73, 250, 38, 0.3);
+}
+
+/* Estilos para el modal de compartir */
+.share-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.share-modal {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  border: 1px solid rgba(73, 250, 38, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(73, 250, 38, 0.2);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.share-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(73, 250, 38, 0.2);
+  padding-bottom: 1rem;
+}
+
+.share-header h3 {
+  color: #49fa26;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.close-share {
+  background: none;
+  border: none;
+  color: #49fa26;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-share:hover {
+  background: rgba(73, 250, 38, 0.1);
+  transform: scale(1.1);
+}
+
+.share-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(73, 250, 38, 0.1);
+  border: 1px solid rgba(73, 250, 38, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #49fa26;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.share-option:hover {
+  background: rgba(73, 250, 38, 0.2);
+  border-color: rgba(73, 250, 38, 0.4);
+  transform: translateX(5px);
+}
+
+.share-icon {
+  font-size: 1.2rem;
+}
+
 /* Aumentar tamaño de imagen del lineup en móviles */
 @media (max-width: 768px) {
   .lineup-container {
@@ -1104,6 +1253,11 @@ footer::before {
     max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
+  }
+
+  .share-lineup-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }
 
