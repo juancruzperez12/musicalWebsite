@@ -164,6 +164,13 @@ h6 {
   backdrop-filter: blur(10px);
 }
 
+/* Altura completa solo para la página index */
+body.index-page .hero-section {
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+}
+
 .hero-section h1 {
   margin-bottom: 1rem;
   font-size: clamp(3rem, 8vw, 6rem);
@@ -172,6 +179,15 @@ h6 {
 .hero-section p {
   margin-bottom: 2rem;
   max-width: 600px;
+}
+
+/* Estilos específicos para la página index */
+body.index-page .hero-section h1 {
+  font-size: clamp(4rem, 10vw, 8rem);
+}
+
+body.index-page .hero-section p {
+  font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 .hero-cta {
@@ -188,16 +204,36 @@ h6 {
 @media (max-width: 768px) {
   /* Aplicar a todas las páginas para consistencia responsive */
   .hero-section {
-    min-height: auto;
+    min-height: 50vh;
     padding: 2rem 1rem;
     margin: 1rem 0;
-    background: none;
+    /* Fondo vertical para pantallas pequeñas */
+    background-image: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      url("fondo 1 vertical.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Altura completa solo para la página index en móviles */
+  body.index-page .hero-section {
+    min-height: 100vh;
+    margin: 0;
   }
 
   .hero-section h1 {
     font-size: clamp(2rem, 8vw, 4rem);
     letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
+  }
+
+  /* Estilos específicos para la página index en móviles */
+  body.index-page .hero-section h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
   }
 
   .hero-cta .navlist-especial {
@@ -1058,11 +1094,15 @@ footer::before {
   box-shadow: 0 8px 32px rgba(73, 250, 38, 0.2);
 }
 
-/* Reducir tamaño de imagen del lineup en móviles */
+/* Aumentar tamaño de imagen del lineup en móviles */
 @media (max-width: 768px) {
+  .lineup-container {
+    padding: 1rem;
+  }
+
   .lineup-image {
-    max-width: 80%;
-    max-height: 50vh;
+    max-width: 95%;
+    max-height: 70vh;
     object-fit: contain;
   }
 }
