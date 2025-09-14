@@ -339,6 +339,13 @@ h6 {
   z-index: 1001;
 }
 
+/* Clase para ocultar el ícono hamburguesa cuando el menú está abierto */
+.hamburger-menu.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 .close-menu {
   display: none;
   position: absolute;

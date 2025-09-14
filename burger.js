@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.style.display = "flex";
         nav.style.visibility = "visible";
         nav.style.opacity = "1";
-        console.log("Clase 'show' agregada al menú");
+        // Ocultar el ícono hamburguesa cuando el menú está abierto
+        hamburgerMenu.classList.add("hidden");
+        console.log("Clase 'show' agregada al menú y hamburguesa ocultado");
       }
     });
   }
@@ -36,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.style.display = "none";
         nav.style.visibility = "hidden";
         nav.style.opacity = "0";
-        console.log("Clase 'show' removida del menú");
+        // Mostrar el ícono hamburguesa cuando el menú está cerrado
+        hamburgerMenu.classList.remove("hidden");
+        console.log("Clase 'show' removida del menú y hamburguesa mostrado");
       }
     });
   }
@@ -56,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.style.display = "none";
       nav.style.visibility = "hidden";
       nav.style.opacity = "0";
+      // Mostrar el ícono hamburguesa cuando se cierra el menú
+      hamburger.classList.remove("hidden");
     }
   });
 });
