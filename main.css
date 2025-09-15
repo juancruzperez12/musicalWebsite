@@ -43,7 +43,9 @@
 }
 
 .playlist-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin: 0 auto 1rem auto;
   padding: 1rem 1.75rem;
   border-radius: 12px;
@@ -55,6 +57,22 @@
   text-decoration: none;
   text-transform: uppercase;
   box-shadow: 0 6px 20px rgba(73, 250, 38, 0.3);
+}
+
+.playlist-spotify-icon-inline {
+  width: 24px;
+  height: 24px;
+  filter: none;
+  margin-right: 2px;
+}
+
+.playlist-text,
+.playlist-brand {
+  color: #000;
+}
+
+.playlist-text {
+  margin-right: 6px;
 }
 
 .playlist-cta:hover {
@@ -1385,6 +1403,116 @@ footer::before {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Estilos para Newsletter Section */
+.newsletter-section {
+  padding: 2rem 1.5rem 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsletter-card {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(73, 250, 38, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(73, 250, 38, 0.2);
+}
+
+.newsletter-title {
+  margin: 0 0 0.5rem 0;
+}
+
+.newsletter-subtitle {
+  color: #c0c0c0;
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.25rem 0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.newsletter-input-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(73, 250, 38, 0.25);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  color: #e6e6e6;
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.newsletter-input::placeholder {
+  color: #8a8a8a;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #49fa26;
+  box-shadow: 0 0 0 3px rgba(73, 250, 38, 0.15);
+}
+
+.newsletter-btn {
+  padding: 0.9rem 1.25rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #49fa26 0%, #3ddb1f 100%);
+  color: #000;
+  border: none;
+  font-family: "Outfit", "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(73, 250, 38, 0.3);
+}
+
+.newsletter-btn:hover {
+  color: #505050;
+  transform: translateY(-1px);
+}
+
+.newsletter-helper {
+  color: #7f7f7f;
+  text-transform: none;
+}
+
+.newsletter-status {
+  min-height: 1.25rem;
+  color: #49fa26;
+}
+
+@media (max-width: 768px) {
+  .newsletter-section {
+    padding: 1.5rem 1rem 3rem 1rem;
+  }
+  .newsletter-card {
+    padding: 1.25rem;
+  }
+  .newsletter-input-wrapper {
+    flex-direction: column;
+  }
+  .newsletter-btn {
+    width: 100%;
+  }
 }
 
 .sponsors-container {

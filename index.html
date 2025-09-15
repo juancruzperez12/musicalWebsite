@@ -83,11 +83,51 @@
           rel="noopener noreferrer"
           class="playlist-cta modern-hover"
         >
-          ESCUCHAR EN SPOTIFY
+          <span class="playlist-text">ESCUCHAR EN</span>
+          <img
+            src="spotify.svg"
+            alt="Spotify"
+            class="playlist-spotify-icon-inline"
+          />
+          <span class="playlist-brand">Spotify</span>
         </a>
 
         <!-- Si tenés el ID de playlist, podemos embeber el reproductor -->
         <!-- <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/TU_PLAYLIST_ID?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="newsletter-card">
+        <h3 class="newsletter-title aggressive-text">RECIBÍ NOVEDADES</h3>
+        <p class="newsletter-subtitle">
+          DEJANOS TU EMAIL Y TE AVISAMOS LO PRÓXIMO DEL FESTIVAL
+        </p>
+
+        <form id="newsletter-form" class="newsletter-form">
+          <div class="newsletter-input-wrapper">
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              class="newsletter-input"
+              placeholder="tucorreo@ejemplo.com"
+              required
+            />
+            <button type="submit" class="newsletter-btn modern-hover">
+              ENVIAR
+            </button>
+          </div>
+          <small class="newsletter-helper"
+            >Usamos tu email solo para novedades del festival.</small
+          >
+          <div
+            id="newsletter-status"
+            class="newsletter-status"
+            aria-live="polite"
+          ></div>
+        </form>
       </div>
     </section>
 
@@ -136,5 +176,39 @@
 
     <script src="burger.js"></script>
     <script src="intro.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      // Inicializar EmailJS (reemplazar con tu Public Key)
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.emailjs) {
+          emailjs.init({ publicKey: "TU_PUBLIC_KEY" });
+        }
+
+        const form = document.getElementById("newsletter-form");
+        const emailInput = document.getElementById("newsletter-email");
+        const statusEl = document.getElementById("newsletter-status");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          statusEl.textContent = "Enviando...";
+
+          try {
+            // Reemplazar serviceId y templateId por los reales de EmailJS
+            const serviceId = "TU_SERVICE_ID";
+            const templateId = "TU_TEMPLATE_ID";
+            const templateParams = { email: emailInput.value };
+
+            if (!window.emailjs) throw new Error("EmailJS no disponible");
+
+            await emailjs.send(serviceId, templateId, templateParams);
+            statusEl.textContent = "¡Gracias! Te mantendremos al tanto.";
+            form.reset();
+          } catch (err) {
+            statusEl.textContent = "Hubo un problema. Intentá de nuevo.";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
